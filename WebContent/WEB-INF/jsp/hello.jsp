@@ -13,7 +13,7 @@
 	<c:if test="${not empty name}">
 		Hello ${name}
 	</c:if>
-	<a href="login.html">Login</a>
+	<a href="login.jsp">Login</a>
 
 </body>
 </html>
