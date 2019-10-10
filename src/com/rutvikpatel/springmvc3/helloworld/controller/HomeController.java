@@ -23,10 +23,7 @@ public class HomeController {
 		return "hello";
 		
 		
-		String trigerFrom = req.getParameter("button");
-		if (trigerFrom.equals("login")) {
-			resp.sendRedirect("login.jsp");
-		}
+		
 	}
 }
 
