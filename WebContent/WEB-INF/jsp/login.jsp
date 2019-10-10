@@ -1,174 +1,173 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Train Ticket Reservation</title>
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+<style type="text/css">
+.LoginBox {
+	position: absolute;
+	top: 20%;
+	left: 38%;
+	right: 38%;
+	transformation: translate(-50%, -50%);
+	width: 350px;
+	height: 300px;
+	padding: 20px 10px;
+	border-radius: 20px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, .3);
+	border-radius: 25px;
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+h4 {
+	font-family: "Times New Roman";
+}
+h1 { font-family: "Monotype Corsiva";
+color: #f8f8ff;
+font-size: 38px;
+border-color: black; }
+.sanBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transformation: translate(-50%, -50%);
+	width: 600px;
+	height: 500px;
+	padding: 80px 10px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, .5);
 }
 
-button:hover {
-  opacity: 0.8;
+.menuBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transformation: translate(-50%, -50%);
+	width: 1040px;
+	height: 500px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, .5);
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+.mapBox {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transformation: translate(-50%, -50%);
+	width: 1280px;
+	height: 600px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, .5);
 }
 
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+body, html {
+	height: 100%;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+input[name="user"], input[name="pwd"] {
+	width: 105%;
+	padding: 10px 10px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	height: 40px;
+}
+input[type="text"], input[name="pwd"]{ border-radius: 14px; }
+input[id="CaptchaEnter"] {
+	padding: 14px 20px;
+	margin: 8px 0;
 }
 
-.container {
-  padding: 16px;
+input[id=randomfield] {
+	padding: 14px 20px;
+	color: #522F65;
+	background-color: #E7DCEC;
+	font-size: 25px;
+	font-family: "Tempus Sans ITC";
+	text-align: center;
+	display: inline-block;
+	width: 60%;
+	margin: 10px;
+	box-sizing: border-box;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+input[type="submit"], input[type="reset"], input[type=button] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	width: 40%;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
+input[type=button] {
+	width: 10%;
+	position: absolute;
+	top: 8px;
+	right: 16px;
+	font-size: 18px;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover
+	{
+	opacity: 0.6;
 }
 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
 
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
 
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
+div {
+	align: center;
 }
 </style>
-</head>
-<body>
-
-<h2>Modal Login Form</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-<div id="id01" class="modal">
-  
- <form action="HomeController" method="post">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login ${login}</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+<script type="text/javascript">
+	function check() {
+		if ((document.loginForm.user.value.length == 0)
+				|| (document.loginForm.pwd.value.length == 0)) {
+			swal({
+				title : "Login error",
+				text : "Fields cannot be empty !",
+				type : "warning"
+			});
+			return false;
+		}
 </script>
 
-</html>
 
+</head>
+<body  class="bg-img">
+	<div class="bg-text" align="center">
+		
+		<form action="" name="loginForm" method="post">
+			<div class="LoginBox">
+				<table>
+					<tr>
+						<td align="center"><input type="text" size=25
+							placeholder="Username" name="user" required /></td>
+					</tr>
+					<tr>
+						<td align="center"><input type="password" size=25
+							placeholder="Password" name="pwd" id="pwd" required /></td>
+					</tr>
+				</table>
+				
+						<td align="center"><input type="submit" value="Login"
+							name="bookButton" onclick="return check()">&nbsp;<input
+							type="Reset"></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
