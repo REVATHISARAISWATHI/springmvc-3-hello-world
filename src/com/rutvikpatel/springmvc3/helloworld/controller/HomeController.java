@@ -23,11 +23,5 @@ public class HomeController {
 		return "hello";
 				
 	}
-	@RequestMapping(value = {"/login"}, method = RequestMethod.GET)
-	public String viewlogin(Model model) {
-		model.addAttribute("login",login);
-		return "login";
-	}
-	
 }
 	
