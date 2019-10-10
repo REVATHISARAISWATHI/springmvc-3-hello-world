@@ -26,16 +26,4 @@ public class HomeController {
 		
 	}
 }
-	/**
-public class HomeController  {
-
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		PrintWriter out= resp.getWriter();
-		String trigerFrom = req.getParameter("button");
-		if (trigerFrom.equals("login")) {
-			resp.sendRedirect("login.jsp");
-		}
-	}
-}
-*/
+	
