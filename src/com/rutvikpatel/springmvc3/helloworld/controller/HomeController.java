@@ -21,9 +21,13 @@ public class HomeController {
 		model.addAttribute("name", name);
 		model.addAttribute("title", "Spring 3.0 MVC Hello World Example");
 		return "hello";
-		
-		
-		
+				
 	}
+	@RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+	public String viewlogin(Model model) {
+		model.addAttribute("login",login);
+		return "login";
+	}
+	
 }
 	
