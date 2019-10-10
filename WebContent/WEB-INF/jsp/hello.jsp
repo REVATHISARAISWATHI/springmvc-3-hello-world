@@ -12,7 +12,7 @@
 	<c:if test="${not empty name}">
 		Hello ${name}
 	</c:if>
-	<a href="${pageContent.request.contentPath}/jsp/login.jsp">Login</a>
+	<a href="${pageContext.request.contextPath}/login.jsp">Login</a>
 
 </body>
 </html>
