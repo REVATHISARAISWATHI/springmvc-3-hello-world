@@ -133,7 +133,7 @@ span.psw {
 
 <div id="id01" class="modal">
   
- <form action="action_page.php" method="post">
+ <form action="HomeController" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -145,7 +145,7 @@ span.psw {
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <button type="submit">Login</button>
+    <button type="submit">Login ${login}</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
