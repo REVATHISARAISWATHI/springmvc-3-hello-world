@@ -15,7 +15,7 @@
 	</c:if>
 -->
 	<a href="login.jsp">Login</a>
-	<form action="/action_page.php">
+	<form action="HomeController">
 <input type="Login" value="login">
 </form> 
 
