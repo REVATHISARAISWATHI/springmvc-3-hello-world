@@ -6,7 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+/**
 @Controller
 public class HomeController {
 
@@ -21,5 +21,17 @@ public class HomeController {
 		model.addAttribute("name", name);
 		model.addAttribute("title", "Spring 3.0 MVC Hello World Example");
 		return "hello";
+	}
+}
+*/
+public class HomeController extends HttpServlet {
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		PrintWriter out= resp.getWriter();
+		String trigerFrom = req.getParameter("button");
+		if (trigerFrom.equals("login")) {
+			resp.sendRedirect("loginpage.jsp");
+		}
 	}
 }
