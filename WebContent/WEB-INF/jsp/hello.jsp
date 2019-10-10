@@ -16,7 +16,7 @@
 -->
 	<a href="login.jsp">Login</a>
 	<form action="HomeController">
-<input type="Login" value="login">
+<input type="Submit" value="login" name="button">
 </form> 
 
 </body>
