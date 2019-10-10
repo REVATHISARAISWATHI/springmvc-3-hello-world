@@ -24,7 +24,7 @@ public class HomeController {
 	}
 }
 */
-public class HomeController extends HttpServlet {
+public class HomeController  {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
