@@ -31,7 +31,7 @@ public class HomeController extends HttpServlet {
 		PrintWriter out= resp.getWriter();
 		String trigerFrom = req.getParameter("button");
 		if (trigerFrom.equals("login")) {
-			resp.sendRedirect("loginpage.jsp");
+			resp.sendRedirect("login.jsp");
 		}
 	}
 }
