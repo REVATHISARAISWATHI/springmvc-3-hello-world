@@ -9,11 +9,15 @@
 </head>
 <body>
 	<h1>Home Page</h1>
-	
+	<!--
 	<c:if test="${not empty name}">
 		Hello ${name}
 	</c:if>
+-->
 	<a href="login.jsp">Login</a>
+	<form action="/action_page.php">
+<input type="Login" value="login">
+</form> 
 
 </body>
 </html>
