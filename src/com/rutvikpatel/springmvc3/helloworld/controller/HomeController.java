@@ -25,11 +25,7 @@ public class HomeController {
 		
 		
 	}
-	@RequestMapping(value = "/login/{login}", method = RequestMethod.POST)
-	public String login(Model model,@PathVariable("login") String name) {
-	}
 }
-
 	/**
 public class HomeController  {
 
