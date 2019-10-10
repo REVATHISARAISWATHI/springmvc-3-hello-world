@@ -8,7 +8,7 @@
 	<title>${title}</title>
 </head>
 <body>
-	<h1>${title}</h1>
+	<h1>Home Page</h1>
 	
 	<c:if test="${not empty name}">
 		Hello ${name}
