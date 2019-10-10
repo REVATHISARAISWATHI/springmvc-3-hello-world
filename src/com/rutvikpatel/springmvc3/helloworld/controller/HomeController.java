@@ -13,14 +13,14 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("title", "Spring 3.0 MVC Hello World Example");
-		return "hello";
+		//return "hello";
 	}
 	
 	@RequestMapping(value = "/hello/{name}", method = RequestMethod.GET)
 	public String hello(Model model,@PathVariable("name") String name) {
 		model.addAttribute("name", name);
 		model.addAttribute("title", "Spring 3.0 MVC Hello World Example");
-		return "hello";
+		//return "hello";
 		
 		
 		
